@@ -5,16 +5,14 @@ import {NavigationContainer, DefaultTheme} from '@react-navigation/native';
 import Home from './screen/Home';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import About from './screen/About';
-import {
-  PaperProvider,
-  MD3LightTheme,
-  adaptNavigationTheme,
-} from 'react-native-paper';
+import {PaperProvider, adaptNavigationTheme} from 'react-native-paper';
 
 const {LightTheme} = adaptNavigationTheme({reactNavigationLight: DefaultTheme});
 const Stack = createNativeStackNavigator();
 
+// Custom Theme colour define code
 const theme = {
+  ...DefaultTheme,
   colors: {
     primary: 'rgb(0, 104, 116)',
     onPrimary: 'rgb(255, 255, 255)',
@@ -62,6 +60,7 @@ const theme = {
 function App() {
   return (
     <PaperProvider theme={theme}>
+      {/* <NavigationContainer theme={LightTheme}>*/}
       <NavigationContainer theme={LightTheme}>
         <Stack.Navigator
           screenOptions={{
