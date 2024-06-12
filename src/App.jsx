@@ -6,6 +6,7 @@ import Home from './screen/Home';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import About from './screen/About';
 import {PaperProvider, adaptNavigationTheme} from 'react-native-paper';
+import Login from './screen/Login';
 
 const {LightTheme} = adaptNavigationTheme({reactNavigationLight: DefaultTheme});
 const Stack = createNativeStackNavigator();
@@ -73,6 +74,11 @@ function App() {
             options={{title: 'Home Page'}}
           />
           <Stack.Screen name="About" component={About} />
+          <Stack.Screen
+            options={{headerShown: false}}
+            name="Login"
+            component={Login}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </PaperProvider>
