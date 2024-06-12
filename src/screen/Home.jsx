@@ -16,8 +16,14 @@ function Home({navigation}) {
       <ScrollView contentInsetAdjustmentBehavior="automatic">
         <View style={styles.sectionContainer}>
           <Text style={styles.sectionTitle}> Hello World - Home</Text>
-          <Button mode="contained" onPress={() => navigation.navigate('About')}>
+          <Button
+            mode="contained"
+            onPress={() => navigation.navigate('About')}
+            style={styles.button}>
             About
+          </Button>
+          <Button mode="contained" onPress={() => navigation.navigate('Login')}>
+            Login
           </Button>
         </View>
       </ScrollView>
@@ -27,8 +33,10 @@ function Home({navigation}) {
 
 const styles = StyleSheet.create({
   sectionContainer: {
+    flex: 1,
     marginTop: 32,
     paddingHorizontal: 24,
+    justifyContent: 'center',
     alignItems: 'center',
   },
   sectionTitle: {
@@ -43,6 +51,11 @@ const styles = StyleSheet.create({
   },
   highlight: {
     fontWeight: '700',
+  },
+  button: {
+    flex: 1,
+    marginBottom: 20,
+    marginTop: 20,
   },
 });
 
